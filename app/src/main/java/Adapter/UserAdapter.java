@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -36,6 +37,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserVH> {
     private List<User> mUsers;
     private FirebaseUser firebaseUser;
 
+
+
+
     public UserAdapter(Context mContext, List<User> mUsers) {
         this.mContext = mContext;
         this.mUsers = mUsers;
@@ -52,14 +56,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserVH> {
 
     @Override
     public void onBindViewHolder(@NonNull UserVH holder, int position) {
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         final User user = mUsers.get(position);
         holder.tvUsername.setText(user.getUsername());
         holder.tvFullname.setText(user.getFullName());
+        holder.btFollow.setVisibility(View.VISIBLE);
         Glide.with(mContext).load(user.getImageURL()).into(holder.imgProfile);
 
-        isFollowing(user.getId(),holder.btFollow);
+       isFollowing(user.getId(),holder.btFollow);
+
+
         if(user.getId().equals(firebaseUser.getUid())){
+
             holder.btFollow.setVisibility(View.GONE);
         }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +75,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserVH> {
             public void onClick(View view) {
                 SharedPreferences.Editor editor =  mContext.getSharedPreferences("PREFS",Context.MODE_PRIVATE).edit();
                 editor.putString("profiled",user.getId());
+
                 editor.apply();
                 ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();
@@ -75,7 +84,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserVH> {
         holder.btFollow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(holder.btFollow.getText().toString().equals("Follow")){
+                Toast.makeText(mContext, "tho", Toast.LENGTH_SHORT).show();
+                if(holder.btFollow.getText().toString().equals("follow")){
                     FirebaseDatabase.getInstance().getReference().child("Follow").child(firebaseUser.getUid())
                             .child("following").child(user.getId()).setValue(true);
                     FirebaseDatabase.getInstance().getReference().child("Follow").child(user.getId())
@@ -87,6 +97,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserVH> {
                             .child("followers").child(firebaseUser.getUid()).removeValue();
 
                 }
+
             }
         });
 

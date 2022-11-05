@@ -3,7 +3,7 @@ package com.example.instagram.Model;
 public class User {
     String imageURL;
     String bio;
-    String fullName;
+    String fullname;
     String id;
     String username;
 
@@ -13,9 +13,33 @@ public class User {
     public User(String imageURL, String bio, String fullName, String id, String username) {
         this.imageURL = imageURL;
         this.bio = bio;
-        this.fullName = fullName;
+        this.fullname = fullName;
         this.id = id;
         this.username = username;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getFullName() {
+        return fullname;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullname = fullName;
     }
 
     public String getId() {
@@ -34,27 +58,14 @@ public class User {
         this.username = username;
     }
 
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getImageURL() {
-        return imageURL;
-    }
-
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
+    @Override
+    public String toString() {
+        return "User{" +
+                "imageURL='" + imageURL + '\'' +
+                ", bio='" + bio + '\'' +
+                ", fullName='" + fullname + '\'' +
+                ", id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                '}';
     }
 }

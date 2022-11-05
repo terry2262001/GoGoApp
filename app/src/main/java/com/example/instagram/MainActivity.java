@@ -31,8 +31,18 @@ public class MainActivity extends AppCompatActivity {
 
        bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
+       Bundle intent = getIntent().getExtras();
+       if(intent != null){
+           String  publisher = intent.getString("publisherid");
+           SharedPreferences.Editor  editor =  getSharedPreferences("PREFS",MODE_PRIVATE).edit();
+           editor.putString("profileid",publisher);
+           editor.apply();
+           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
+       }
+
       getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
         //
+
 
 
     }
@@ -57,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.nav_profile:
                     SharedPreferences.Editor editor = getSharedPreferences("PREFS",MODE_PRIVATE).edit();
-                    editor.putString("profileid", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    editor.putString("profiled", FirebaseAuth.getInstance().getCurrentUser().getUid());
                     editor.apply();
                     selectedFragment = new ProfileFragment();
                     break;

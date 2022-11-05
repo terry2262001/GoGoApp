@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.instagram.Model.User;
 import com.example.instagram.R;
@@ -61,6 +62,7 @@ public class SearchFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                System.out.println(charSequence.toString() + " search_fragemtn_key");
                     searchUsers(charSequence.toString().toLowerCase());
             }
 
@@ -85,7 +87,7 @@ public class SearchFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mUsers.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    User user = snapshot.getValue(User.class);
+                    User user = dataSnapshot.getValue(User.class);
                     mUsers.add(user);
                 }
                 userAdapter.notifyDataSetChanged();
@@ -102,10 +104,9 @@ public class SearchFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(search_bar.getText().toString().equals("")){
+                if(!search_bar.getText().toString().equals("")){
                     mUsers.clear();
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                        System.out.println(dataSnapshot.getValue()+"tho1");
                         User user = dataSnapshot.getValue(User.class);
                         mUsers.add(user);
                     }
