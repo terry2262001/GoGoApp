@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import Adapter.CommentAdapter;
+import com.example.instagram.Adapter.CommentAdapter;
 
 public class CommentActivity extends AppCompatActivity {
     private RecyclerView rvComment;
@@ -110,9 +110,20 @@ public class CommentActivity extends AppCompatActivity {
 
 
         reference.push().setValue(hashMap);
+        addNotifications();
         etAddComment.setText("Add comment...");
 
 
+    }
+    private void addNotifications(){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Notifications").child(publisherid);
+        HashMap<String,Object> hashMap = new HashMap<>();
+        hashMap.put("userid",firebaseUser.getUid());
+        hashMap.put("text","commented: "+etAddComment.getText().toString());
+        hashMap.put("postid",postId);
+        hashMap.put("ispost",true);
+
+        reference.push().setValue(hashMap);
     }
 
     private void getImage(){

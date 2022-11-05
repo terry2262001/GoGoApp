@@ -1,4 +1,4 @@
-package Adapter;
+package com.example.instagram.Adapter;
 
 import android.content.Context;
 import android.content.Intent;

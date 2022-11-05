@@ -5,24 +5,35 @@
       <map>
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/drawable-anydpi/ic_heart.xml" value="0.2795" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.113" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/drawable/add_story_item.xml" value="0.272" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/drawable/button_background.xml" value="0.1855" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/drawable/button_background_no_border.xml" value="0.256" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/drawable/button_black.xml" value="0.1855" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/drawable/button_bottom_border.xml" value="0.169" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/drawable/edittext_background.xml" value="0.1855" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/drawable/selector.xml" value="0.112" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_comment.xml" value="0.264" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_edit_profile.xml" value="0.275" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_follower.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_login.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_main.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_main2.xml" value="0.2265625" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_options.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_post.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_register.xml" value="0.275" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/activity_story.xml" value="0.275" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/add_story_item.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/comment_item.xml" value="0.264" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/fragment_home.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/fragment_notification.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/fragment_post_detail.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/fragment_search.xml" value="0.264" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/notofications_item.xml" value="0.264" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/photo_item.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/post_item.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/startactivity.xml" value="0.275" />
+        <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/story_item.xml" value="0.275" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/layout/user_item.xml" value="0.27395833333333336" />
         <entry key="..\:/Users/truon/Documents/BT_Android/Instagram/app/src/main/res/menu/bottom_navigation.xml" value="0.23177083333333334" />
       </map>

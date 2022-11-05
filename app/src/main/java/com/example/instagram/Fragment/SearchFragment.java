@@ -1,6 +1,5 @@
 package com.example.instagram.Fragment;
 
-import android.app.DownloadManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.instagram.Model.User;
 import com.example.instagram.R;
@@ -27,9 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
-import Adapter.UserAdapter;
+import com.example.instagram.Adapter.UserAdapter;
 
 public class SearchFragment extends Fragment {
     private RecyclerView recyclerView;
