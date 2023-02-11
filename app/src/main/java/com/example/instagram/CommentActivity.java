@@ -64,12 +64,17 @@ public class CommentActivity extends AppCompatActivity {
             }
         });
 
+
+        Intent intent = getIntent();
+        postId = intent.getStringExtra("postid");
+        publisherid = intent.getStringExtra("publisherid");
+
         rvComment = findViewById(R.id.rvComment);
         rvComment.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rvComment.setLayoutManager(linearLayoutManager);
         commentLists = new ArrayList<>();
-        commentAdapter = new CommentAdapter(this,commentLists);
+        commentAdapter = new CommentAdapter(this,commentLists,postId);
         rvComment.setAdapter(commentAdapter);
 
         etAddComment = findViewById(R.id.etAddComment);
@@ -79,12 +84,6 @@ public class CommentActivity extends AppCompatActivity {
         //
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         //
-
-
-
-        Intent intent = getIntent();
-        postId = intent.getStringExtra("postid");
-        publisherid = intent.getStringExtra("publisherid");
 
         tvPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,12 +103,16 @@ public class CommentActivity extends AppCompatActivity {
 
     private void addComment() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Comments").child(postId);
+
+        String commentid  = reference.push().getKey();
+
         HashMap<String,Object> hashMap = new HashMap<>();
         hashMap.put("comment",etAddComment.getText().toString());
         hashMap.put("publisher",firebaseUser.getUid());
 
 
-        reference.push().setValue(hashMap);
+       // reference.push().setValue(hashMap);
+        reference.child(commentid).setValue(hashMap);
         addNotifications();
         etAddComment.setText("Add comment...");
 

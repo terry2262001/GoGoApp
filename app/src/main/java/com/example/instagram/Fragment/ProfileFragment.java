@@ -73,7 +73,7 @@ public class ProfileFragment extends Fragment {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         SharedPreferences pref = getContext().getSharedPreferences("PREFS", Context.MODE_PRIVATE);
         profileid = pref.getString("profileid", "none");
-        System.out.println("profileid_profile_fragment" + profileid);
+
 
         tvUsername = view.findViewById(R.id.tvUsername);
         tvPosts = view.findViewById(R.id.tvPosts);

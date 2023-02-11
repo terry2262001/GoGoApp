@@ -157,7 +157,7 @@ public class HomeFragment extends Fragment {
                             storyList.add(story);
                             storyList1.add(story);
                             for (Story story1 : storyList){
-                                System.out.println(story1 + "tho1111");
+
                             }
 
                             //storyList.add(story);
@@ -224,7 +224,7 @@ public class HomeFragment extends Fragment {
 
                         }
 
-                        System.out.println(storyList+"tho1");
+
 
 
                     }
